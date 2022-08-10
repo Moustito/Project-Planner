@@ -1,6 +1,14 @@
 @import './header.scss';
 @import './colors.scss';
+@import './navbar.scss';
 
 body{
     background-color:$background_color;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2{
+    font-size:1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
