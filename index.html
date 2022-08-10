@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js" defer></script>
-    
+    <script src="assets/js/header.js" defer></script>
     <title>Project Planner</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -16,7 +16,8 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>Project Planner</h1>
+        <h1 class="first__title">Project Planner</h1>
+        <time class="currentDay"> </time>
         <section class="profile">
             <div class="profile__picture__border">
                 <img src="assets/images/ryanR.jpeg" alt="ryan_picture" class="profile__picture">
@@ -35,7 +36,7 @@
         <nav class="nav__tasks">
             <div class="tasks">
                 <h2>My Tasks</h2>
-                <button class="tasks__addBtn" title="add new task" onclick="location.href='new_task.html'">
+                <button class="tasks__addBtn" title="add new task" onclick="location.href='./new_task.html'">
                     <img src="assets/images/plus.png" alt="plus">
                 </button>
             </div>

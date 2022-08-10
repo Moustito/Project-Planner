@@ -45,7 +45,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.3rem;
   align-items: center;
   max-width: 100vh;
   height: 30vh;
@@ -53,18 +52,26 @@ header {
   background-color: #e9b776;
   color: #283344;
 }
-header h1 {
+header .first__title {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1rem;
   letter-spacing: 3px;
+  font-weight: 200;
   width: 80%;
   text-align: center;
   margin-top: 0.6rem;
 }
 @media only screen and (max-width: 420px) {
-  header h1 {
+  header .first__title {
     font-size: 1.7rem;
   }
+}
+header .currentDay {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: 400;
+  padding-bottom: 1rem;
 }
 
 .profile {
