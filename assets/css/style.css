@@ -1,1 +1,71 @@
+@import '/assets/css/reset.css';
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3rem;
+  align-items: center;
+  max-width: 100vh;
+  height: 30vh;
+  border-radius: 40px;
+  background-color: #e9b776;
+  color: #283344;
+  font-family: "Poppins", sans-serif;
+}
+header h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  width: 80%;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 2rem;
+  width: 80%;
+}
+.profile__picture__border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 4rem;
+  border: 0.4rem solid #D46C74;
+  border-top-color: transparent;
+  transform: rotate(-45deg);
+  position: relative;
+}
+.profile__picture {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: rotate(45deg);
+}
+.profile__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  letter-spacing: 1px;
+}
+.profile__identity__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.profile__identity__function {
+  color: #3e4f69;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+
+body {
+  background-color: #FEF9ED;
+}
+
 /*# sourceMappingURL=style.css.map */

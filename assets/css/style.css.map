@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/header.scss","../scss/colors.scss","../scss/style.scss"],"names":[],"mappings":"AACQ;AAER;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EAEA,kBCbW;EDcX,OCTS;EDWT;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;;;AAIR;EACI;EACA;EACA;EACA;EACA;EAEA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAGJ;EACI;EACA;EACA;EACA;EACA;;AAUJ;EACI;EACA;EACA;EACA;;AACA;EACI;EACA;;AAEJ;EACI,OCrEW;EDsEX;EACA;;;AE1EZ;EACI,kBDIe","file":"style.css"}
