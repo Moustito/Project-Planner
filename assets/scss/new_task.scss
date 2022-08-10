@@ -2,24 +2,88 @@
 
 body {
   background-color: $background_color;
+  font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
 
   header {
     background-color: $header_color;
     padding-left: 15px;
+    border-radius: 50px;
 
-
+    .buttonBack {
+      margin: 40px 0 40px 0;
+    }
     h1 {
-      margin: 15px 0 15px 0;
+      margin: 0px 0 30px 0;
 
-      font-size: 30px;
+      font-size: 40px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       color: $font_color;
     }
+    #title {
+      background-color: $header_color;
+      border: 0;
+      border-bottom: 1px solid #cda169;
+      width: 90%;
+    }
+    #date {
+      background-color: $header_color;
+      border: 0;
+      border-bottom: 1px solid #cda169;
+      width: 90%;
+    }
     input:nth-child(6) {
-        margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
   main {
+
     padding-left: 15px;
+    padding-right: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      "startTimeText endTimeText"
+      "startTimeInput endTimeInput"
+      "descritionText descritionText"
+      "descritionInput descritionInput"
+      "descritionInput descritionInput"
+      "descritionInput descritionInput"
+      "urgentText urgentInput";
+    .startTime {
+      grid-area: startTimeText;
+    }
+    .endTime {
+      grid-area: endTimeText;
+    }
+    .description {
+      grid-area: descritionText;
+    }
+    #startTime {
+      grid-area: startTimeInput;
+      background-color: $background_color;
+      border: 0;
+      width: 90%;
+    }
+    #endTime {
+      grid-area: endTimeInput;
+      background-color: $background_color;
+      border: 0;
+    }
+    #description {
+      grid-area: descritionInput;
+      background-color: $background_color;
+      border: 0;
+    }
+    .urgent {
+      grid-area: urgentText;
+    }
+    #urgent {
+      margin-top: 10px;
+      grid-area: urgentInput;
+      appearance: checkbox;
+    }
   }
   footer {
     padding: 20px 15px 0 15px;

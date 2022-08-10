@@ -1,20 +1,79 @@
 body {
   background-color: #FEF9ED;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body header {
   background-color: #e9b776;
   padding-left: 15px;
+  border-radius: 50px;
+}
+body header .buttonBack {
+  margin: 40px 0 40px 0;
 }
 body header h1 {
-  margin: 15px 0 15px 0;
-  font-size: 30px;
+  margin: 0px 0 30px 0;
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: #283344;
 }
+body header #title {
+  background-color: #e9b776;
+  border: 0;
+  border-bottom: 1px solid #cda169;
+  width: 90%;
+}
+body header #date {
+  background-color: #e9b776;
+  border: 0;
+  border-bottom: 1px solid #cda169;
+  width: 90%;
+}
 body header input:nth-child(6) {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 body main {
   padding-left: 15px;
+  padding-right: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: "startTimeText endTimeText" "startTimeInput endTimeInput" "descritionText descritionText" "descritionInput descritionInput" "descritionInput descritionInput" "descritionInput descritionInput" "urgentText urgentInput";
+}
+body main .startTime {
+  grid-area: startTimeText;
+}
+body main .endTime {
+  grid-area: endTimeText;
+}
+body main .description {
+  grid-area: descritionText;
+}
+body main #startTime {
+  grid-area: startTimeInput;
+  background-color: #FEF9ED;
+  border: 0;
+  width: 90%;
+}
+body main #endTime {
+  grid-area: endTimeInput;
+  background-color: #FEF9ED;
+  border: 0;
+}
+body main #description {
+  grid-area: descritionInput;
+  background-color: #FEF9ED;
+  border: 0;
+}
+body main .urgent {
+  grid-area: urgentText;
+}
+body main #urgent {
+  margin-top: 10px;
+  grid-area: urgentInput;
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
 }
 body footer {
   padding: 20px 15px 0 15px;
