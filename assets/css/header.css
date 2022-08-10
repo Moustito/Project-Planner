@@ -1,45 +1,4 @@
 @import '/assets/css/reset.css';
-body {
-  background-color: #FEF9ED;
-}
-body header {
-  background-color: #e9b776;
-  padding-left: 15px;
-}
-body header h1 {
-  margin: 15px 0 15px 0;
-  font-size: 30px;
-  color: #283344;
-}
-body header input:nth-child(6) {
-  margin-bottom: 20px;
-}
-body main {
-  padding-left: 15px;
-}
-body footer {
-  padding: 20px 15px 0 15px;
-}
-body footer #createTask {
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  background-color: rgb(9, 106, 242);
-  border-radius: 50px;
-  color: white;
-}
-body #createTask:hover {
-  cursor: pointer;
-}
-
-.h5 {
-  color: grey;
-  margin-top: 10px;
-  margin-bottom: 2px;
-}
-
 header {
   display: flex;
   flex-direction: column;
@@ -104,8 +63,4 @@ header h1 {
   color: #3e4f69;
   font-size: 1.3rem;
   font-weight: lighter;
-}
-
-body {
-  background-color: #FEF9ED;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=header.css.map */
