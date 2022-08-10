@@ -86,8 +86,7 @@ header h1 {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: rotate(45deg);
 }
 .profile__identity {
@@ -108,4 +107,6 @@ header h1 {
 
 body {
   background-color: #FEF9ED;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
