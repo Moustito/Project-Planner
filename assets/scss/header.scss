@@ -14,7 +14,7 @@ header{
     background-color:$header_color ;
     color: $font_color;
 
-    font-family: 'Poppins', sans-serif;
+    // box-shadow: 2px 2px 2px 2px rgb(117, 103, 78);
 
     h1{
         text-transform: uppercase;
@@ -23,6 +23,9 @@ header{
         width: 80%;
         text-align: center;
         margin-top: 0.6rem;
+        @media only screen and (max-width: 420px) {
+            font-size: 1.7rem;
+        }
     }
 }
 
@@ -46,21 +49,17 @@ header{
         border-top-color: transparent;
         transform: rotate(-45deg);
         position: relative;
+        @media only screen and (max-width: 380px) {
+            width: 10rem;
+        }
 
     }
     &__picture{
-        width: 6rem;
-        height: 6rem;
+        width: 6.5rem;
+        height: 6.5rem;
         border-radius: 50%;
         object-fit: cover;
         transform: rotate(45deg);
-
-//         border-top: 3px solid transparent;
-//   border-left: 0.5rem solid rgba(177, 151, 151, 0);
-//   border-right: 0.5rem solid $red_todo;
-//   border-bottom: 0.5rem solid $red_todo;
-//   border-top:0.5rem solid $red_todo;
-  
     }
 
     &__identity{
