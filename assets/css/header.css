@@ -3,22 +3,31 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.3rem;
   align-items: center;
-  max-width: 100vh;
-  height: 30vh;
   border-radius: 40px;
   background-color: #e9b776;
-  color: #283344;
-  font-family: "Poppins", sans-serif;
+  color: #2c3138;
 }
-header h1 {
+header .first__title {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1rem;
   letter-spacing: 3px;
+  font-weight: 200;
   width: 80%;
   text-align: center;
   margin-top: 0.6rem;
+}
+@media only screen and (max-width: 420px) {
+  header .first__title {
+    font-size: 1.7rem;
+  }
+}
+header .currentDay {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: 400;
+  padding-bottom: 1rem;
 }
 
 .profile {
@@ -41,9 +50,14 @@ header h1 {
   transform: rotate(-45deg);
   position: relative;
 }
+@media only screen and (max-width: 380px) {
+  .profile__picture__border {
+    width: 10rem;
+  }
+}
 .profile__picture {
-  width: 6rem;
-  height: 6rem;
+  width: 6.5rem;
+  height: 6.5rem;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -60,7 +74,7 @@ header h1 {
   font-weight: 700;
 }
 .profile__identity__function {
-  color: #3e4f69;
+  color: #3f444c;
   font-size: 1.3rem;
   font-weight: lighter;
 }

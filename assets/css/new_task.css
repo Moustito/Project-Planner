@@ -15,7 +15,7 @@ body header h1 {
   margin: 0px 0 30px 0;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #283344;
+  color: #2c3138;
 }
 body header #title {
   background-color: #e9b776;
@@ -32,7 +32,7 @@ body header #date {
 body header input:nth-child(6) {
   margin-bottom: 40px;
 }
-body main {
+body .main_new_task {
   padding-left: 15px;
   padding-right: 15px;
   display: grid;
@@ -40,35 +40,35 @@ body main {
   grid-template-rows: repeat(7, 1fr);
   grid-template-areas: "startTimeText endTimeText" "startTimeInput endTimeInput" "descritionText descritionText" "descritionInput descritionInput" "descritionInput descritionInput" "descritionInput descritionInput" "urgentText urgentInput";
 }
-body main .startTime {
+body .main_new_task .startTime {
   grid-area: startTimeText;
 }
-body main .endTime {
+body .main_new_task .endTime {
   grid-area: endTimeText;
 }
-body main .description {
+body .main_new_task .description {
   grid-area: descritionText;
 }
-body main #startTime {
+body .main_new_task #startTime {
   grid-area: startTimeInput;
   background-color: #FEF9ED;
   border: 0;
   width: 90%;
 }
-body main #endTime {
+body .main_new_task #endTime {
   grid-area: endTimeInput;
   background-color: #FEF9ED;
   border: 0;
 }
-body main #description {
+body .main_new_task #description {
   grid-area: descritionInput;
   background-color: #FEF9ED;
   border: 0;
 }
-body main .urgent {
+body .main_new_task .urgent {
   grid-area: urgentText;
 }
-body main #urgent {
+body .main_new_task #urgent {
   margin-top: 10px;
   grid-area: urgentInput;
   -webkit-appearance: checkbox;
