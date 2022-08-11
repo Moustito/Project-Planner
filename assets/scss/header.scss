@@ -2,16 +2,18 @@
 @import '/assets/css/reset.css';
 
 header{
+    height: 25vh;
+
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
     // max-width: 100vh;
     // height: 30vh;
-    border-radius: 40px;
 
-    background-color:$header_color ;
-    color: $font_color;
+    // background-image: url("/assets/images/be.webp");
+    background-color:$font-color ;
+    color: $background_color;
 
     // box-shadow: 2px 2px 2px 2px rgb(117, 103, 78);
 
@@ -20,12 +22,7 @@ header{
         font-size: 1rem;
         letter-spacing: 3px;
         font-weight: 200;
-        width: 80%;
-        text-align: center;
-        margin-top: 0.6rem;
-        @media only screen and (max-width: 420px) {
-            font-size: 1.7rem;
-        }
+        padding-bottom: 1rem;
     }
     .currentDay{
         text-transform: uppercase;
@@ -33,6 +30,9 @@ header{
         letter-spacing: 3px;
         font-weight: 400;
         padding-bottom: 1rem;
+        @media only screen and (max-width: 420px) {
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -52,7 +52,7 @@ header{
         width: 8rem;
         height: 8rem;
         border-radius: 4rem;
-        border: 0.4rem solid $red_todo;
+        border: 0.4rem solid #df4e5a;
         border-top-color: transparent;
         transform: rotate(-45deg);
         position: relative;
@@ -77,9 +77,9 @@ header{
         &__name{
             font-size: 1.4rem;
             font-weight: 700;
+            color:#df4e5a;
         }
         &__function{
-            color: $secondary_font_color;
             font-size: 1.3rem;
             font-weight: lighter;
         }
