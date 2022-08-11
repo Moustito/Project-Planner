@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/header.js" defer></script>
+    <script src="assets/js/task_cards.js" defer></script>
+    
     <title>Project Planner</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -49,6 +51,90 @@
         </nav>
         <!-- NavBar -->
         <!-- Task -->
+        <section class="task__cards">
+            <div class="task__card card__todo">
+                <section class="task__card__closed card__todo__closed">
+                    <div class="task__card__icon">
+                        <img src="assets/images/todo.png" alt="doneIcon" class="todo__icon">
+                    </div>
+                    <div class="task__card__presentation">
+                        <h3 class="task__card__presentation__title" id="task__title">Tech Talk</h3>
+                        <p class="task__card__presentation__daysLeft"><span class="daysLeftUntil"></span>days lefts</p>
+                    </div>
+                    <img src="assets/images/danger.png" alt="" class="task__card__important">
+                </section>
+
+                <section class="task__card__opened card__todo__opened">
+
+                    <div class="task__card__header">
+                        <div class="task__card__icon">
+                            <img src="assets/images/todo.png" alt="doneIcon" class="todo__icon">
+                        </div>
+                        <h4 class="task__card__header__category title__todo">TO DO</h4>
+                    </div>
+
+                    <div class="task__card__content">
+                        <h3 class="task__card__content__title" id="task__title">TASK NAME</h3>
+                        <p class="task__card__content__description"> Lorem ipsum dolor sit amra in amet cumque umque vero, sit neque voluptatibus quibusdam deserunt.</p>
+                    
+                        <div class="task__card__content__startEnd">
+                            <div class="task__time">Start :<span id="start__task"></span></div>
+                            <div class="task__time">End :<span id="end__task"></span></div>
+                        </div>
+
+                        <div class="task__card__content__deadline">
+                            <div class="task__dueDate__Text"></div>
+                            <p class="task__daysLeft"><span class="daysLeftUntil">5</span> days lefts</p>
+                        </div>
+
+                        <form class="task__card__content__progress">
+                            <input type="checkbox" class="checkbox" id="check__todo" value="todo">
+                                <label for="check__todo">To Do</label>
+                            <input type="checkbox" class="checkbox" id="check__progress" value="progress">
+                                <label for="check__progress">In Progress</label>
+                            <input type="checkbox" class="checkbox" id="check__done" value="done">
+                                <label for="check__done">Done</label>
+                        </form>
+
+                    </div>
+                </section>
+            </div>
+
+
+
+
+
+            <div class="task__card progress">
+                <section class="task__card__closed">
+                    <div class="task__card__icon">
+                        <img src="assets/images/progress.png" alt="doneIcon" class="progression__icon">
+                    </div>
+                    <div class="task__card__presentation">
+                        <h3 class="task__card__presentation__title" id="task__title">Tech Talk</h3>
+                        <p class="task__card__presentation__daysLeft"><span class="daysLeftUntil"></span>days lefts</p>
+                    </div>
+                    <img src="assets/images/danger.png" alt="" class="task__card__important">
+                </section>
+            </div>
+
+            <div class="task__card done">
+                <section class="task__card__closed">
+                    <div class="task__card__icon">
+                        <img src="assets/images/done.png" alt="doneIcon" class="done__icon">
+                    </div>
+                    <div class="task__card__presentation">
+                        <h3 class="task__card__presentation__title" id="task__title">Tech Talk</h3>
+                        <p class="task__card__presentation__daysLeft"><span class="daysLeftUntil"></span>days lefts</p>
+                    </div>
+                    <img src="assets/images/danger.png" alt="" class="task__card__important">
+                </section>
+            </div>
+<!--OPENED CARDS-->
+
+         
+
+        </section>
+        
 
         <!-- Task -->
     </main>
