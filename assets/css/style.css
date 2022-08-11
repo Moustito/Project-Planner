@@ -1,41 +1,47 @@
 @import '/assets/css/reset.css';
 @import '/assets/css/reset.css';
 @import '/assets/css/reset.css';
-body {
+.newTask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
   background-color: #FEF9ED;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
-body header {
+.newTask .newTask_header {
   background-color: #e9b776;
   padding-left: 15px;
   border-radius: 50px;
 }
-body header .buttonBack {
+.newTask .newTask_header .buttonBack {
   margin: 40px 0 40px 0;
 }
-body header h1 {
+.newTask .newTask_header h1 {
   margin: 0px 0 30px 0;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: #2c3138;
 }
-body header #title {
+.newTask .newTask_header #title {
   background-color: #e9b776;
   border: 0;
   border-bottom: 1px solid #cda169;
   width: 90%;
 }
-body header #date {
+.newTask .newTask_header #date {
   background-color: #e9b776;
   border: 0;
   border-bottom: 1px solid #cda169;
   width: 90%;
 }
-body header input:nth-child(6) {
+.newTask .newTask_header input:nth-child(6) {
   margin-bottom: 40px;
 }
-body .main_new_task {
+.newTask .newTask_main {
   padding-left: 15px;
   padding-right: 15px;
   display: grid;
@@ -43,43 +49,45 @@ body .main_new_task {
   grid-template-rows: repeat(7, 1fr);
   grid-template-areas: "startTimeText endTimeText" "startTimeInput endTimeInput" "descritionText descritionText" "descritionInput descritionInput" "descritionInput descritionInput" "descritionInput descritionInput" "urgentText urgentInput";
 }
-body .main_new_task .startTime {
+.newTask .newTask_main .startTime {
   grid-area: startTimeText;
 }
-body .main_new_task .endTime {
+.newTask .newTask_main .endTime {
   grid-area: endTimeText;
 }
-body .main_new_task .description {
+.newTask .newTask_main .description {
   grid-area: descritionText;
 }
-body .main_new_task #startTime {
+.newTask .newTask_main #startTime {
   grid-area: startTimeInput;
   background-color: #FEF9ED;
   border: 0;
   width: 90%;
 }
-body .main_new_task #endTime {
+.newTask .newTask_main #endTime {
   grid-area: endTimeInput;
   background-color: #FEF9ED;
   border: 0;
 }
-body .main_new_task #description {
+.newTask .newTask_main #description {
   grid-area: descritionInput;
   background-color: #FEF9ED;
   border: 0;
 }
-body .main_new_task .urgent {
+.newTask .newTask_main .urgent {
   grid-area: urgentText;
 }
-body .main_new_task #urgent {
+.newTask .newTask_main #urgent {
   margin-top: 10px;
   grid-area: urgentInput;
-  appearance: checkbox;
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
 }
-body footer {
+.newTask .newTask_footer {
   padding: 20px 15px 0 15px;
 }
-body footer #createTask {
+.newTask .newTask_footer #createTask {
   height: 50px;
   display: flex;
   justify-content: center;
@@ -89,7 +97,7 @@ body footer #createTask {
   border-radius: 50px;
   color: white;
 }
-body #createTask:hover {
+.newTask #createTask:hover {
   cursor: pointer;
 }
 
@@ -159,7 +167,8 @@ header .currentDay {
   width: 6.5rem;
   height: 6.5rem;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transform: rotate(45deg);
 }
 .profile__identity {
@@ -229,6 +238,8 @@ header .currentDay {
 .nav__tasks .tasks__filter .filter {
   border-radius: 20px;
   height: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   text-align: center;
   margin-top: 0.3rem;
@@ -477,5 +488,3 @@ h2 {
   font-weight: 600;
   letter-spacing: 1px;
 }
-
-/*# sourceMappingURL=style.css.map */

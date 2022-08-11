@@ -1,6 +1,7 @@
 var taskList = [];
 
 let createTask = document.getElementById("createTask");
+let newTask = document.getElementsByClassName("newTask")[0];
 
 createTask.addEventListener("click", (event) => {
   console.log("click");
@@ -9,8 +10,13 @@ createTask.addEventListener("click", (event) => {
     !(document.getElementById("date").value === "")
   ) {
     pushNewTask();
-    location.href = "index.html";
+    newTask.style.display = "none";
   }
+});
+
+let Back = document.getElementsByClassName("buttonBack")[0];
+Back.addEventListener("click", (event) => {
+  newTask.style.display = "none";
 });
 
 function pushNewTask() {
@@ -36,3 +42,8 @@ function pushNewTask() {
 
   taskList.push(obj);
 }
+
+function displayNewTask() {
+  newTask.style.display = "block";
+}
+
