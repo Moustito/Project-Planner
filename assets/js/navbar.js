@@ -1,18 +1,12 @@
 let tasksTodo = document.getElementsByClassName('card__todo');
-console.log(tasksTodo);
 let tasksInProgress = document.getElementsByClassName('card__progress');
-console.log(tasksInProgress);
 let tasksDone = document.getElementsByClassName('card__done');
-console.log(tasksDone);
 
 
 let filterAll = document.getElementsByClassName('filter__all')[0];
 let filterTodo = document.getElementsByClassName('filter__todo')[0];
-console.log(filterTodo)
 let filterProgress = document.getElementsByClassName('filter__progress')[0];
-console.log(filterProgress)
 let filterDone = document.getElementsByClassName('filter__done')[0];
-console.log(filterDone)
 
 
 
