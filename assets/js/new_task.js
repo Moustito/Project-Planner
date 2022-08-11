@@ -1,4 +1,5 @@
-const taskList = [];
+var taskList = [];
+
 let createTask = document.getElementById("createTask");
 
 createTask.addEventListener("click", (event) => {
@@ -8,6 +9,7 @@ createTask.addEventListener("click", (event) => {
     !(document.getElementById("date").value === "")
   ) {
     pushNewTask();
+    location.href = "index.html";
   }
 });
 
@@ -33,6 +35,4 @@ function pushNewTask() {
   obj["urgent"] = inputUrgent;
 
   taskList.push(obj);
-
-  location.href = "index.html";
 }
