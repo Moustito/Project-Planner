@@ -51,14 +51,14 @@
     }
 }
 
-.progress{
+.card__progress{
     .task__card__icon{
         background-color: $yellow_progress;
     }
 }
 
 
-.done{
+.card__done{
     .task__card__icon{
         background-color: $blue_done;
     }
