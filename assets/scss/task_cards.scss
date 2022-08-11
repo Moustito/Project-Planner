@@ -72,6 +72,7 @@
         display: flex;
         flex-direction: column;
 
+        border: solid black 3px;
         border-top: double 6px $color;
         border-bottom: solid 6px $color;
 
@@ -124,14 +125,6 @@
                 font-weight: 600;
             }
 
-            //DAYS LEFT
-            &__deadline{
-                text-transform: uppercase;
-                color: $red_todo;
-                .daysLeftUntil{
-                    font-weight: 600;
-                }
-            }
 
             //PROGESS
             &__progress{
@@ -166,9 +159,9 @@
     }
 }
 
-.task__card__opened{
-    visibility:collapse;
-}
+// .task__card__opened{
+//     visibility:collapse;
+// }
 
 //CARD TODO OPENED
 .card__todo__opened{
