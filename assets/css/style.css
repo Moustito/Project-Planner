@@ -80,9 +80,7 @@
 .newTask .newTask_main #urgent {
   margin-top: 10px;
   grid-area: urgentInput;
-  -webkit-appearance: checkbox;
-     -moz-appearance: checkbox;
-          appearance: checkbox;
+  appearance: checkbox;
 }
 .newTask .newTask_footer {
   padding: 20px 15px 0 15px;
@@ -167,8 +165,7 @@ header .currentDay {
   width: 6.5rem;
   height: 6.5rem;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: rotate(45deg);
 }
 .profile__identity {
@@ -238,8 +235,6 @@ header .currentDay {
 .nav__tasks .tasks__filter .filter {
   border-radius: 20px;
   height: 2rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   text-align: center;
   margin-top: 0.3rem;
@@ -488,3 +483,5 @@ h2 {
   font-weight: 600;
   letter-spacing: 1px;
 }
+
+/*# sourceMappingURL=style.css.map */
