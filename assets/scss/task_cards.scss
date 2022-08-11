@@ -2,6 +2,7 @@
 @import '/assets/css/reset.css';
 
 .task__cards{
+    font-size: 1rem;
     h3{
         font-weight: 700;
     }
@@ -65,23 +66,15 @@
 
 //CARD OPENED
 @mixin opened-card($color, $color-transparent){
-    
-    .task__card__opened{
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-
-        border-top: double 6px $color;
-        border-bottom: solid 6px $color;
-
-    }
 
     .task__card{
         //HEADER OF THE CARD
         &__header{
+            margin-top: 1rem;
             height: 4rem;
             color : $color;
             background-color: $color-transparent;
+            border-top: double 6px $color;
 
             font-weight: bold;
             font-size: 1rem;
@@ -91,6 +84,7 @@
 
             align-items: center;
             justify-content: center;
+            align-self: ce;
             padding-left:1rem;
 
             gap: 1rem;
@@ -106,9 +100,6 @@
             align-items: center;
             padding: 1rem;
             gap:1rem;
-            &__title{
-                font-size: larger;
-            }
             &__description{
                 text-align: justify;
             }
@@ -123,50 +114,18 @@
                 font-weight: 600;
             }
 
-            //DAYS LEFT
-            &__deadline{
-                text-transform: uppercase;
-                color: $red_todo;
-                .daysLeftUntil{
-                    font-weight: 600;
-                }
-            }
 
-            //PROGESS
-            &__progress{
-                width: 80%;
-                height: 2rem;
-            
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-
-                input{
-                    display: none;
-            
-                    & + label:before{
-                        content:"\2713";
-                        border: solid $color 3px;
-                        border-radius: 0.3rem;
-                        vertical-align: bottom;
-                        color:transparent;
-                    }
-                    &:checked + label:before{
-                        background-color: $color;
-                        color: $background_color;
-                        transition: .2s;
-                    }
-                }
-            }
-        }
-
-    
+            //UPDATE
+            &__select{
+                border-bottom:$color solid 2px;
+                padding-bottom: 1rem;
+            } 
+        }      
     }
 }
 
 .task__card__opened{
-    visibility:collapse;
+    display: none;
 }
 
 //CARD TODO OPENED
