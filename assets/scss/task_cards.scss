@@ -124,9 +124,9 @@
     }
 }
 
-// .task__card__opened{
-//     visibility:collapse;
-// }
+.task__card__opened{
+    display: none;
+}
 
 //CARD TODO OPENED
 .card__todo__opened{

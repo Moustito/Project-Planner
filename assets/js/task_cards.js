@@ -1,14 +1,37 @@
-let cards = document.getElementsByClassName('task__cards')[0];
-let todoCard= document.getElementsByClassName('card__todo')[0];
-let todoCardClosed = document.getElementsByClassName('card__todo__closed')[0];
-let todoCardOpened = document.getElementsByClassName('card__todo__opened')[0];
-let progressCardOpened = document.getElementsByClassName('card__progress__opened')[0];
-let doneCardOpened = document.getElementsByClassName('card__done__opened')[0];
 
-//FUNCTION TO DISPLAY AND HIDE THE DETAILS OF THE TASKS
-function showCardTodo(){
-    todoCardOpened.classList.toggle('task__card__opened');
+let allClosedCards= document.querySelectorAll('.task__card__closed');
+let allCards= document.querySelectorAll('.task__card')
+let allOpenedCards= document.querySelectorAll('.task__card__opened');
+
+
+// function showCard (){
+//     allClosedCards.forEach(card => {
+
+//         allOpenedCards.forEach(openCard => {
+//             openCard.classList.toggle('task__card__opened');
+            
+//         });
+
+//     });
+// }
+const clickOnCards = (e) =>{
+    var card = e.target.classList;
+    console.log(card)
+    allClosedCards.forEach(card => {
+
+        allOpenedCards.forEach(openCard => {
+            openCard.classList.toggle('task__card__opened');
+            
+        });
+
+    });
 }
+// allCards.forEach(card => {
+//     card.addEventListener('click', showCard)
+// });
 
-cards.addEventListener('click', showCardTodo);
+// clickOnCards();
 
+for (let card of allClosedCards) {
+    card.addEventListener('click', clickOnCards)
+}
