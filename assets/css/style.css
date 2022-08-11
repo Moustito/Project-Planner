@@ -325,11 +325,11 @@ header .currentDay {
   height: 1.4rem;
 }
 
-.progress .task__card__icon {
+.card__progress .task__card__icon {
   background-color: #e8b471;
 }
 
-.done .task__card__icon {
+.card__done .task__card__icon {
   background-color: #6C87DD;
 }
 
