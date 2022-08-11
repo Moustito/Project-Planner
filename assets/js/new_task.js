@@ -3,7 +3,12 @@ let createTask = document.getElementById("createTask");
 
 createTask.addEventListener("click", (event) => {
   console.log("click");
-  pushNewTask();
+  if (
+    !(document.getElementById("title").value === "") &&
+    !(document.getElementById("date").value === "")
+  ) {
+    pushNewTask();
+  }
 });
 
 function pushNewTask() {
@@ -28,7 +33,6 @@ function pushNewTask() {
   obj["urgent"] = inputUrgent;
 
   taskList.push(obj);
-  
-  
+
   location.href = "index.html";
 }
