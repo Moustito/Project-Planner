@@ -276,45 +276,48 @@ header .currentDay {
   background-color: #6C87DD;
 }
 
-.card__todo__opened {
+.task__card__opened {
   visibility: collapse;
 }
 
-.task__card__opened {
+.card__todo__opened .task__card__opened {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  border: #D46C74 solid 6px;
-  border-radius: 40px;
+  border-top: double 6px #D46C74;
+  border-bottom: solid 6px #D46C74;
 }
-
-.task__card__header {
+.card__todo__opened .task__card__header {
   height: 4rem;
   color: #D46C74;
   background-color: rgba(212, 108, 117, 0.4823529412);
-  border-radius: 30px 30px 0 0;
   font-weight: bold;
-  font-size: large;
+  font-size: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   padding-left: 1rem;
   gap: 1rem;
 }
-.task__card__content {
+.card__todo__opened .task__card__header__title {
+  color: #2c3138;
+  font-size: large;
+}
+.card__todo__opened .task__card__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
   gap: 1rem;
 }
-.task__card__content__title {
+.card__todo__opened .task__card__content__title {
   font-size: larger;
 }
-.task__card__content__description {
+.card__todo__opened .task__card__content__description {
   text-align: justify;
 }
-.task__card__content__startEnd {
+.card__todo__opened .task__card__content__startEnd {
   width: 60%;
   display: flex;
   flex-direction: row;
@@ -322,14 +325,14 @@ header .currentDay {
   text-transform: uppercase;
   font-weight: 600;
 }
-.task__card__content__deadline {
+.card__todo__opened .task__card__content__deadline {
   text-transform: uppercase;
   color: #D46C74;
 }
-.task__card__content__deadline .daysLeftUntil {
+.card__todo__opened .task__card__content__deadline .daysLeftUntil {
   font-weight: 600;
 }
-.task__card__content__progress {
+.card__todo__opened .task__card__content__progress {
   width: 80%;
   height: 2rem;
   display: flex;
@@ -337,18 +340,170 @@ header .currentDay {
   justify-content: space-between;
   align-items: center;
 }
-.task__card__content__progress input {
+.card__todo__opened .task__card__content__progress input {
   display: none;
 }
-.task__card__content__progress input + label:before {
+.card__todo__opened .task__card__content__progress input + label:before {
   content: "✓";
   border: solid #D46C74 3px;
   border-radius: 0.3rem;
   vertical-align: bottom;
   color: transparent;
 }
-.task__card__content__progress input:checked + label:before {
+.card__todo__opened .task__card__content__progress input:checked + label:before {
   background-color: #D46C74;
+  color: #FEF9ED;
+  transition: 0.2s;
+}
+
+.card__progress__opened .task__card__opened {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-top: double 6px #e8b471;
+  border-bottom: solid 6px #e8b471;
+}
+.card__progress__opened .task__card__header {
+  height: 4rem;
+  color: #e8b471;
+  background-color: rgba(237, 197, 145, 0.5215686275);
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+.card__progress__opened .task__card__header__title {
+  color: #2c3138;
+  font-size: large;
+}
+.card__progress__opened .task__card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+.card__progress__opened .task__card__content__title {
+  font-size: larger;
+}
+.card__progress__opened .task__card__content__description {
+  text-align: justify;
+}
+.card__progress__opened .task__card__content__startEnd {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.card__progress__opened .task__card__content__deadline {
+  text-transform: uppercase;
+  color: #D46C74;
+}
+.card__progress__opened .task__card__content__deadline .daysLeftUntil {
+  font-weight: 600;
+}
+.card__progress__opened .task__card__content__progress {
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__progress__opened .task__card__content__progress input {
+  display: none;
+}
+.card__progress__opened .task__card__content__progress input + label:before {
+  content: "✓";
+  border: solid #e8b471 3px;
+  border-radius: 0.3rem;
+  vertical-align: bottom;
+  color: transparent;
+}
+.card__progress__opened .task__card__content__progress input:checked + label:before {
+  background-color: #e8b471;
+  color: #FEF9ED;
+  transition: 0.2s;
+}
+
+.card__done__opened .task__card__opened {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-top: double 6px #6C87DD;
+  border-bottom: solid 6px #6C87DD;
+}
+.card__done__opened .task__card__header {
+  height: 4rem;
+  color: #6C87DD;
+  background-color: rgba(108, 134, 221, 0.5254901961);
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+.card__done__opened .task__card__header__title {
+  color: #2c3138;
+  font-size: large;
+}
+.card__done__opened .task__card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+.card__done__opened .task__card__content__title {
+  font-size: larger;
+}
+.card__done__opened .task__card__content__description {
+  text-align: justify;
+}
+.card__done__opened .task__card__content__startEnd {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.card__done__opened .task__card__content__deadline {
+  text-transform: uppercase;
+  color: #D46C74;
+}
+.card__done__opened .task__card__content__deadline .daysLeftUntil {
+  font-weight: 600;
+}
+.card__done__opened .task__card__content__progress {
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__done__opened .task__card__content__progress input {
+  display: none;
+}
+.card__done__opened .task__card__content__progress input + label:before {
+  content: "✓";
+  border: solid #6C87DD 3px;
+  border-radius: 0.3rem;
+  vertical-align: bottom;
+  color: transparent;
+}
+.card__done__opened .task__card__content__progress input:checked + label:before {
+  background-color: #6C87DD;
   color: #FEF9ED;
   transition: 0.2s;
 }

@@ -1,16 +1,14 @@
+let cards = document.getElementsByClassName('task__cards')[0];
+let todoCard= document.getElementsByClassName('card__todo')[0];
 let todoCardClosed = document.getElementsByClassName('card__todo__closed')[0];
-console.log(todoCardClosed);
-
 let todoCardOpened = document.getElementsByClassName('card__todo__opened')[0];
-console.log(todoCardOpened);
+let progressCardOpened = document.getElementsByClassName('card__progress__opened')[0];
+let doneCardOpened = document.getElementsByClassName('card__done__opened')[0];
 
-// const openCardTodo = todoCardClosed.map(card =>
-//     card.addEventListener('click', () =>{
-//         card.className.toggle('card__todo_opened')
-//     }) )
+//FUNCTION TO DISPLAY AND HIDE THE DETAILS OF THE TASKS
+function showCardTodo(){
+    todoCardOpened.classList.toggle('task__card__opened');
+}
 
-    todoCardClosed.addEventListener('click', () =>{
-        todoCardOpened.style.visibility= 'visible';
-    })
+cards.addEventListener('click', showCardTodo);
 
-    // todoCardOpened.style.visibility = "visible";

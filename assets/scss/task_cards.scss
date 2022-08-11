@@ -65,16 +65,15 @@
 }
 
 //CARD OPENED
-// @mixin opened-card($color, $color-transparent){
-    .card__todo__opened{
-        visibility:collapse;
-    }
+@mixin opened-card($color, $color-transparent){
+    
     .task__card__opened{
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
 
-        border: $red_todo solid 6px;
-        border-radius: 40px;
+        border-top: double 6px $color;
+        border-bottom: solid 6px $color;
 
     }
 
@@ -82,21 +81,24 @@
         //HEADER OF THE CARD
         &__header{
             height: 4rem;
-            color : $red_todo;
-            background-color: $red_todo_transparent;
-            border-radius: 30px 30px 0 0;
+            color : $color;
+            background-color: $color-transparent;
 
             font-weight: bold;
-            font-size: large;
+            font-size: 1rem;
 
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
 
             align-items: center;
-            justify-content: left;
+            justify-content: center;
             padding-left:1rem;
 
             gap: 1rem;
+            &__title{
+                color: $font-color;
+                font-size: large;
+            }
         }
         //CONTENT : TITLE AND DESCRIPTION
         &__content{
@@ -146,13 +148,13 @@
             
                     & + label:before{
                         content:"\2713";
-                        border: solid $red_todo 3px;
+                        border: solid $color 3px;
                         border-radius: 0.3rem;
                         vertical-align: bottom;
                         color:transparent;
                     }
                     &:checked + label:before{
-                        background-color: $red_todo;
+                        background-color: $color;
                         color: $background_color;
                         transition: .2s;
                     }
@@ -162,3 +164,23 @@
 
     
     }
+}
+
+.task__card__opened{
+    visibility:collapse;
+}
+
+//CARD TODO OPENED
+.card__todo__opened{
+    @include opened-card($red_todo, $red_todo_transparent);
+
+}
+//CARD PROGRESS OPENED
+.card__progress__opened{
+    @include opened-card($yellow_progress, $yellow_progress_transparent);
+}
+
+//CARD DONE OPENED
+.card__done__opened{
+    @include opened-card($blue_done, $blue_done_transparent);
+}
