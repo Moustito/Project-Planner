@@ -1,8 +1,9 @@
-@import 'new_task', 'header', 'colors', 'navbar';
+@import 'new_task', 'header', 'colors', 'navbar', 'task_cards';
 
 body{
     background-color:$background_color;
     font-family: 'Poppins', sans-serif;
+    color: $font_color;
 }
 
 h2{

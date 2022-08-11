@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/header.js" defer></script>
+    <script src="assets/js/task_cards.js" defer></script>
     
     <title>Project Planner</title>
 
@@ -16,7 +18,8 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>Project Planner</h1>
+        <h1 class="first__title">Project Planner</h1>
+        <time class="currentDay"> </time>
         <section class="profile">
             <div class="profile__picture__border">
                 <img src="assets/images/ryanR.jpeg" alt="ryan_picture" class="profile__picture">
@@ -35,7 +38,7 @@
         <nav class="nav__tasks">
             <div class="tasks">
                 <h2>My Tasks</h2>
-                <button class="tasks__addBtn" title="add new task" onclick="location.href='new_task.html'">
+                <button class="tasks__addBtn" title="add new task" onclick="location.href='./new_task.html'">
                     <img src="assets/images/plus.png" alt="plus">
                 </button>
             </div>
@@ -46,8 +49,141 @@
                 <p class="filter filter__done">Done</p>
             </div> 
         </nav>
-        <!-- NavBar -->
-        <!-- Task -->
+        <!-- END NavBar -->
+        <!-- Task : SECTIOn WITH THE 3 CATEGORIES -->
+        <section class="task__cards">
+                <!-- CARD TO DO -->
+            <div class="task__card card__todo">
+                    <!-- CARD CLOSED -->
+                <section class="task__card__closed card__todo__closed">
+                    <div class="task__card__icon">
+                        <img src="assets/images/todo.png" alt="doneIcon" class="todo__icon">
+                    </div>
+                    <div class="task__card__presentation">
+                        <h3 class="task__card__presentation__title" id="task__title">TASK NAME<!-- ENTER DATA HERE --></h3>
+                        <p class="task__card__presentation__daysLeft"><span class="daysLeftUntil"><!-- ENTER DATA HERE --></span>days lefts</p>
+                    </div>
+                    <img src="assets/images/danger.png" alt="" class="task__card__important">
+                </section>
+                    <!-- CARD OPENED -->
+                <section class="task__card__opened card__todo__opened">
+
+                    <div class="task__card__header">
+                        <h4 class="task__card__header__category title__todo">TO DO</h4>
+                        <h3 class="task__card__header__title" id="task__title">TASK NAME<!-- ENTER DATA HERE --></h3>
+                    </div>
+
+                    <div class="task__card__content">
+                        <p class="task__card__content__description"> <!-- ENTER DATA HERE --> Lorem ipsum dolor sit amra in amet cumque umque vero, sit neque voluptatibus quibusdam deserunt.</p>
+                    
+                        <div class="task__card__content__startEnd">
+                            <div class="task__time">Start :<span id="start__task"><!-- ENTER DATA HERE --></span></div>
+                            <div class="task__time">End :<span id="end__task"><!-- ENTER DATA HERE --></span></div>
+                        </div>
+                    
+                        <form class="task__card__content__progress">
+                            <input type="checkbox" class="checkbox" id="check__todo" value="todo">
+                                <label for="check__todo">To Do</label>
+                            <input type="checkbox" class="checkbox" id="check__progress" value="progress">
+                                <label for="check__progress">In Progress</label>
+                            <input type="checkbox" class="checkbox" id="check__done" value="done">
+                                <label for="check__done">Done</label>
+                        </form>
+
+                    </div>
+                </section>
+            </div>
+
+
+
+
+        <!-- CARD PROGRESS -->
+            <div class="task__card progress">
+                <section class="task__card__closed">
+                    <div class="task__card__icon">
+                        <img src="assets/images/progress.png" alt="doneIcon" class="progression__icon">
+                    </div>
+                    <div class="task__card__presentation">
+                        <h3 class="task__card__presentation__title" id="task__title">Tech Talk</h3>
+                        <p class="task__card__presentation__daysLeft"><span class="daysLeftUntil"></span>days lefts</p>
+                    </div>
+                    <img src="assets/images/danger.png" alt="" class="task__card__important">
+                </section>
+                <!-- CARD OPENED -->
+                <section class="task__card__opened card__progress__opened">
+
+                    <div class="task__card__header">
+                        <h4 class="task__card__header__category title__progress">TO DO</h4>
+                        <h3 class="task__card__header__title" id="task__title">TASK NAME<!-- ENTER DATA HERE --></h3>
+                    </div>
+
+                    <div class="task__card__content">
+                        <p class="task__card__content__description"> <!-- ENTER DATA HERE --> Lorem ipsum dolor sit amra in amet cumque umque vero, sit neque voluptatibus quibusdam deserunt.</p>
+                    
+                        <div class="task__card__content__startEnd">
+                            <div class="task__time">Start :<span id="start__task"><!-- ENTER DATA HERE --></span></div>
+                            <div class="task__time">End :<span id="end__task"><!-- ENTER DATA HERE --></span></div>
+                        </div>
+                    
+                        <form class="task__card__content__progress">
+                            <input type="checkbox" class="checkbox" id="check__todo" value="todo">
+                                <label for="check__todo">To Do</label>
+                            <input type="checkbox" class="checkbox" id="check__progress" value="progress">
+                                <label for="check__progress">In Progress</label>
+                            <input type="checkbox" class="checkbox" id="check__done" value="done">
+                                <label for="check__done">Done</label>
+                        </form>
+
+                    </div>
+                </section>
+            </div>
+
+        <!-- CARD DONE -->
+            <div class="task__card done">
+                <section class="task__card__closed">
+                    <div class="task__card__icon">
+                        <img src="assets/images/done.png" alt="doneIcon" class="done__icon">
+                    </div>
+                    <div class="task__card__presentation">
+                        <h3 class="task__card__presentation__title" id="task__title">Tech Talk</h3>
+                        <p class="task__card__presentation__daysLeft"><span class="daysLeftUntil"></span>days lefts</p>
+                    </div>
+                    <img src="assets/images/danger.png" alt="" class="task__card__important">
+                </section>
+                <!-- CARD OPENED -->
+                <section class="task__card__opened card__done__opened">
+
+                    <div class="task__card__header">
+                        <h4 class="task__card__header__category title__done">TO DO</h4>
+                        <h3 class="task__card__header__title" id="task__title">TASK NAME<!-- ENTER DATA HERE --></h3>
+                    </div>
+
+                    <div class="task__card__content">
+                        <p class="task__card__content__description"> <!-- ENTER DATA HERE --> Lorem ipsum dolor sit amra in amet cumque umque vero, sit neque voluptatibus quibusdam deserunt.</p>
+                    
+                        <div class="task__card__content__startEnd">
+                            <div class="task__time">Start :<span id="start__task"><!-- ENTER DATA HERE --></span></div>
+                            <div class="task__time">End :<span id="end__task"><!-- ENTER DATA HERE --></span></div>
+                        </div>
+                    
+                        <form class="task__card__content__progress">
+                            <input type="checkbox" class="checkbox" id="check__todo" value="todo">
+                                <label for="check__todo">To Do</label>
+                            <input type="checkbox" class="checkbox" id="check__progress" value="progress">
+                                <label for="check__progress">In Progress</label>
+                            <input type="checkbox" class="checkbox" id="check__done" value="done">
+                                <label for="check__done">Done</label>
+                        </form>
+
+                    </div>
+                </section>
+            </div>
+<!--OPENED CARDS-->
+
+         
+
+        </section>
+        
 
         <!-- Task -->
     </main>
