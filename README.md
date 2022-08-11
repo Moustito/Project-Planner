@@ -1,3 +1,6 @@
 # Project-Planner
+Project Group :
+-Sophie Gillard
+-Titouan Moussiaux
 
-sass ./assets/scss/style.scss:./assets/css/style.css --watch
+We build a simple planner app.

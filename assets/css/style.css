@@ -6,6 +6,10 @@ body {
 body header {
   background-color: #e9b776;
   padding-left: 15px;
+  border-radius: 50px;
+}
+body header .buttonBack {
+  margin-top: 40px;
 }
 body header h1 {
   margin: 15px 0 15px 0;
@@ -13,7 +17,7 @@ body header h1 {
   color: #283344;
 }
 body header input:nth-child(6) {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 body main {
   padding-left: 15px;

@@ -23,10 +23,12 @@ function pushNewTask() {
   // desciption
   let inputDescription = document.getElementById("description").value;
   obj["description"] = inputDescription;
+  // urgent
+  let inputUrgent = document.getElementById("urgent").checked;
+  obj["urgent"] = inputUrgent;
 
   taskList.push(obj);
-
+  
+  
   location.href = "index.html";
-
-  console.log(taskList);
 }
