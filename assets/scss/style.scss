@@ -1,5 +1,14 @@
-@import 'new_task', 'header', 'colors';
+@import 'new_task', 'header', 'colors', 'navbar', 'task_cards';
 
 body{
     background-color:$background_color;
+    font-family: 'Poppins', sans-serif;
+    color: $font_color;
+}
+
+h2{
+    font-size:1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
 }

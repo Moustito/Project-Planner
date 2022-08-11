@@ -1,0 +1,186 @@
+@import './colors.scss';
+@import '/assets/css/reset.css';
+
+
+.task__cards{
+    h3{
+        font-weight: 700;
+    }
+}
+.task__card{
+    cursor: pointer;
+    width: 85%;
+    margin: 1.7rem;
+
+    //Card when it's closed -- using a grid for the display
+    &__closed{
+        display: grid; 
+        grid-template-columns: 1fr 3fr 1fr; 
+        grid-template-rows: 1fr; 
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+
+        align-items: center;
+    }
+    
+
+    &__important{
+        height: 3rem;
+        justify-self: right;
+    }
+    &__presentation{
+        line-height: 1.2rem;
+        &__daysLeft{
+            font-size: small;
+        }
+    }
+}
+//Style of the icons
+.task__card__icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $red_todo;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+
+    img{
+        height: 1.4rem;
+    }
+}
+
+.progress{
+    .task__card__icon{
+        background-color: $yellow_progress;
+    }
+}
+
+
+.done{
+    .task__card__icon{
+        background-color: $blue_done;
+    }
+}
+
+//CARD OPENED
+@mixin opened-card($color, $color-transparent){
+    
+    .task__card__opened{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        border-top: double 6px $color;
+        border-bottom: solid 6px $color;
+
+    }
+
+    .task__card{
+        //HEADER OF THE CARD
+        &__header{
+            height: 4rem;
+            color : $color;
+            background-color: $color-transparent;
+
+            font-weight: bold;
+            font-size: 1rem;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+            padding-left:1rem;
+
+            gap: 1rem;
+            &__title{
+                color: $font-color;
+                font-size: large;
+            }
+        }
+        //CONTENT : TITLE AND DESCRIPTION
+        &__content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            gap:1rem;
+            &__title{
+                font-size: larger;
+            }
+            &__description{
+                text-align: justify;
+            }
+
+             //HOURS OF THE TASKS
+            &__startEnd{
+                width: 60%;
+                display: flex;
+                flex-direction: row;         
+                justify-content: space-between; 
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+
+            //DAYS LEFT
+            &__deadline{
+                text-transform: uppercase;
+                color: $red_todo;
+                .daysLeftUntil{
+                    font-weight: 600;
+                }
+            }
+
+            //PROGESS
+            &__progress{
+                width: 80%;
+                height: 2rem;
+            
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                input{
+                    display: none;
+            
+                    & + label:before{
+                        content:"\2713";
+                        border: solid $color 3px;
+                        border-radius: 0.3rem;
+                        vertical-align: bottom;
+                        color:transparent;
+                    }
+                    &:checked + label:before{
+                        background-color: $color;
+                        color: $background_color;
+                        transition: .2s;
+                    }
+                }
+            }
+        }
+
+    
+    }
+}
+
+.task__card__opened{
+    visibility:collapse;
+}
+
+//CARD TODO OPENED
+.card__todo__opened{
+    @include opened-card($red_todo, $red_todo_transparent);
+
+}
+//CARD PROGRESS OPENED
+.card__progress__opened{
+    @include opened-card($yellow_progress, $yellow_progress_transparent);
+}
+
+//CARD DONE OPENED
+.card__done__opened{
+    @include opened-card($blue_done, $blue_done_transparent);
+}

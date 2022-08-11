@@ -1,0 +1,101 @@
+@import './colors.scss';
+@import '/assets/css/reset.css';
+
+
+.nav__tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1.3rem;
+    height:7rem;
+
+
+    .tasks, .tasks__filter{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tasks__addBtn{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+        background-color: $green_task;
+        border: none;
+        cursor: pointer;
+        
+        &:hover{
+            background-color: #296c75;
+        }
+        img{
+            width: 1.7rem;
+            height: 1.7rem;
+            align-self: center;
+            justify-self: center;
+            padding: 0.1rem;
+        }
+    }
+    .tasks__filter{
+        font-size:1.3rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        @media only screen and (max-width: 360px) {
+            font-size:1.1rem;
+        }
+        @media only screen and (min-width: 600px) {
+            width: 60%;
+            align-self: center;
+        }
+        .filter{
+            border-radius: 20px;
+            height:2rem;
+            width:fit-content;
+            text-align: center;
+            margin-top:0.3rem;
+            padding-top: 0.3rem;
+            &__all:hover{
+                font-weight: bold;
+            }
+            &__todo{
+                background-color: $red_todo_transparent;
+                width: 5rem;
+                @media only screen and (max-width: 360px) {
+                    width:4rem;
+                }
+                &:hover{
+                    color:$background_color;
+                    background-color: $red_todo;
+                    font-weight: bolder;
+                }
+            }
+            &__progress{
+                width: 9rem;
+                background-color: $yellow_progress_transparent;
+                @media only screen and (max-width: 360px) {
+                    width:8rem;
+                }
+                &:hover{
+                    color:$background_color;
+                    background-color: $yellow_progress;
+                    font-weight: bolder;
+                }
+            }
+            &__done{
+                width: 5rem;
+                background-color: $blue_done_transparent;
+                @media only screen and (max-width: 360px) {
+                    width:4rem;
+                }
+                &:hover{
+                    color:$background_color;
+                    background-color: $blue_done;
+                    font-weight: bolder;
+                }
+            }
+        }
+    
+    }
+
+}

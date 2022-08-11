@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import '/assets/css/reset.css';
+@import '/assets/css/reset.css';
 @import '/assets/css/reset.css';
 body {
   background-color: #FEF9ED;
@@ -16,7 +19,7 @@ body header h1 {
   margin: 0px 0 30px 0;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #283344;
+  color: #2c3138;
 }
 body header #title {
   background-color: #e9b776;
@@ -103,22 +106,33 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.3rem;
   align-items: center;
   max-width: 100vh;
   height: 30vh;
   border-radius: 40px;
   background-color: #e9b776;
-  color: #283344;
-  font-family: "Poppins", sans-serif;
+  color: #2c3138;
 }
-header h1 {
+header .first__title {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1rem;
   letter-spacing: 3px;
+  font-weight: 200;
   width: 80%;
   text-align: center;
   margin-top: 0.6rem;
+}
+@media only screen and (max-width: 420px) {
+  header .first__title {
+    font-size: 1.7rem;
+  }
+}
+header .currentDay {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: 400;
+  padding-bottom: 1rem;
 }
 
 .profile {
@@ -141,9 +155,14 @@ header h1 {
   transform: rotate(-45deg);
   position: relative;
 }
+@media only screen and (max-width: 380px) {
+  .profile__picture__border {
+    width: 10rem;
+  }
+}
 .profile__picture {
-  width: 6rem;
-  height: 6rem;
+  width: 6.5rem;
+  height: 6.5rem;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -160,11 +179,405 @@ header h1 {
   font-weight: 700;
 }
 .profile__identity__function {
-  color: #3e4f69;
+  color: #3f444c;
   font-size: 1.3rem;
   font-weight: lighter;
 }
 
+.nav__tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1.3rem;
+  height: 7rem;
+}
+.nav__tasks .tasks, .nav__tasks .tasks__filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__tasks .tasks__addBtn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  background-color: #357982;
+  border: none;
+  cursor: pointer;
+}
+.nav__tasks .tasks__addBtn:hover {
+  background-color: #296c75;
+}
+.nav__tasks .tasks__addBtn img {
+  width: 1.7rem;
+  height: 1.7rem;
+  align-self: center;
+  justify-self: center;
+  padding: 0.1rem;
+}
+.nav__tasks .tasks__filter {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .nav__tasks .tasks__filter {
+    width: 60%;
+    align-self: center;
+  }
+}
+.nav__tasks .tasks__filter .filter {
+  border-radius: 20px;
+  height: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-top: 0.3rem;
+  padding-top: 0.3rem;
+}
+.nav__tasks .tasks__filter .filter__all:hover {
+  font-weight: bold;
+}
+.nav__tasks .tasks__filter .filter__todo {
+  background-color: rgba(212, 108, 117, 0.4823529412);
+  width: 5rem;
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter .filter__todo {
+    width: 4rem;
+  }
+}
+.nav__tasks .tasks__filter .filter__todo:hover {
+  color: #FEF9ED;
+  background-color: #D46C74;
+  font-weight: bolder;
+}
+.nav__tasks .tasks__filter .filter__progress {
+  width: 9rem;
+  background-color: rgba(237, 197, 145, 0.5215686275);
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter .filter__progress {
+    width: 8rem;
+  }
+}
+.nav__tasks .tasks__filter .filter__progress:hover {
+  color: #FEF9ED;
+  background-color: #e8b471;
+  font-weight: bolder;
+}
+.nav__tasks .tasks__filter .filter__done {
+  width: 5rem;
+  background-color: rgba(108, 134, 221, 0.5254901961);
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter .filter__done {
+    width: 4rem;
+  }
+}
+.nav__tasks .tasks__filter .filter__done:hover {
+  color: #FEF9ED;
+  background-color: #6C87DD;
+  font-weight: bolder;
+}
+
+.task__cards h3 {
+  font-weight: 700;
+}
+
+.task__card {
+  cursor: pointer;
+  width: 85%;
+  margin: 1.7rem;
+}
+.task__card__closed {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+}
+.task__card__important {
+  height: 3rem;
+  justify-self: right;
+}
+.task__card__presentation {
+  line-height: 1.2rem;
+}
+.task__card__presentation__daysLeft {
+  font-size: small;
+}
+
+.task__card__icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #D46C74;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 1.5rem;
+}
+.task__card__icon img {
+  height: 1.4rem;
+}
+
+.progress .task__card__icon {
+  background-color: #e8b471;
+}
+
+.done .task__card__icon {
+  background-color: #6C87DD;
+}
+
+.task__card__opened {
+  visibility: collapse;
+}
+
+.card__todo__opened .task__card__opened {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-top: double 6px #D46C74;
+  border-bottom: solid 6px #D46C74;
+}
+.card__todo__opened .task__card__header {
+  height: 4rem;
+  color: #D46C74;
+  background-color: rgba(212, 108, 117, 0.4823529412);
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+.card__todo__opened .task__card__header__title {
+  color: #2c3138;
+  font-size: large;
+}
+.card__todo__opened .task__card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+.card__todo__opened .task__card__content__title {
+  font-size: larger;
+}
+.card__todo__opened .task__card__content__description {
+  text-align: justify;
+}
+.card__todo__opened .task__card__content__startEnd {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.card__todo__opened .task__card__content__deadline {
+  text-transform: uppercase;
+  color: #D46C74;
+}
+.card__todo__opened .task__card__content__deadline .daysLeftUntil {
+  font-weight: 600;
+}
+.card__todo__opened .task__card__content__progress {
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__todo__opened .task__card__content__progress input {
+  display: none;
+}
+.card__todo__opened .task__card__content__progress input + label:before {
+  content: "✓";
+  border: solid #D46C74 3px;
+  border-radius: 0.3rem;
+  vertical-align: bottom;
+  color: transparent;
+}
+.card__todo__opened .task__card__content__progress input:checked + label:before {
+  background-color: #D46C74;
+  color: #FEF9ED;
+  transition: 0.2s;
+}
+
+.card__progress__opened .task__card__opened {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-top: double 6px #e8b471;
+  border-bottom: solid 6px #e8b471;
+}
+.card__progress__opened .task__card__header {
+  height: 4rem;
+  color: #e8b471;
+  background-color: rgba(237, 197, 145, 0.5215686275);
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+.card__progress__opened .task__card__header__title {
+  color: #2c3138;
+  font-size: large;
+}
+.card__progress__opened .task__card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+.card__progress__opened .task__card__content__title {
+  font-size: larger;
+}
+.card__progress__opened .task__card__content__description {
+  text-align: justify;
+}
+.card__progress__opened .task__card__content__startEnd {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.card__progress__opened .task__card__content__deadline {
+  text-transform: uppercase;
+  color: #D46C74;
+}
+.card__progress__opened .task__card__content__deadline .daysLeftUntil {
+  font-weight: 600;
+}
+.card__progress__opened .task__card__content__progress {
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__progress__opened .task__card__content__progress input {
+  display: none;
+}
+.card__progress__opened .task__card__content__progress input + label:before {
+  content: "✓";
+  border: solid #e8b471 3px;
+  border-radius: 0.3rem;
+  vertical-align: bottom;
+  color: transparent;
+}
+.card__progress__opened .task__card__content__progress input:checked + label:before {
+  background-color: #e8b471;
+  color: #FEF9ED;
+  transition: 0.2s;
+}
+
+.card__done__opened .task__card__opened {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-top: double 6px #6C87DD;
+  border-bottom: solid 6px #6C87DD;
+}
+.card__done__opened .task__card__header {
+  height: 4rem;
+  color: #6C87DD;
+  background-color: rgba(108, 134, 221, 0.5254901961);
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+.card__done__opened .task__card__header__title {
+  color: #2c3138;
+  font-size: large;
+}
+.card__done__opened .task__card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+.card__done__opened .task__card__content__title {
+  font-size: larger;
+}
+.card__done__opened .task__card__content__description {
+  text-align: justify;
+}
+.card__done__opened .task__card__content__startEnd {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.card__done__opened .task__card__content__deadline {
+  text-transform: uppercase;
+  color: #D46C74;
+}
+.card__done__opened .task__card__content__deadline .daysLeftUntil {
+  font-weight: 600;
+}
+.card__done__opened .task__card__content__progress {
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__done__opened .task__card__content__progress input {
+  display: none;
+}
+.card__done__opened .task__card__content__progress input + label:before {
+  content: "✓";
+  border: solid #6C87DD 3px;
+  border-radius: 0.3rem;
+  vertical-align: bottom;
+  color: transparent;
+}
+.card__done__opened .task__card__content__progress input:checked + label:before {
+  background-color: #6C87DD;
+  color: #FEF9ED;
+  transition: 0.2s;
+}
+
 body {
   background-color: #FEF9ED;
+  font-family: "Poppins", sans-serif;
+  color: #2c3138;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
