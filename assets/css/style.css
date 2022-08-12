@@ -427,10 +427,6 @@ main {
   background-color: #6C87DD;
 }
 
-.task__card__opened {
-  display: none;
-}
-
 .card__todo__opened .task__card__header {
   margin-top: 1rem;
   height: 4rem;
