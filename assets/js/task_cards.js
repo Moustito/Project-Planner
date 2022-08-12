@@ -36,3 +36,4 @@ const clickOnCards = (e) =>{
 for (let card of allClosedCards) {
     card.addEventListener('click', clickOnCards)
 }
+
