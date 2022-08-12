@@ -115,7 +115,7 @@ function displayTaskList(obj) {
 
   if (document.getElementById("urgent").checked == true) {
     let task__card__important = document.createElement("img");
-    task__card__important.src = "assets/images/danger.png"; // remplacer par un if si checkbox= true => visible
+    task__card__important.src = "assets/images/danger.png";
     task__card__closed.appendChild(task__card__important);
     task__card__important.classList.add("task__card__important");
     console.log('checked');
@@ -155,7 +155,7 @@ function displayTaskList(obj) {
     "task__card__content__description"
   );
   let task__card__content__description_text = document.createTextNode(
-    taskList.desciption
+    obj.desciption
   );
   task__card__content__description.appendChild(
     task__card__content__description_text
@@ -200,8 +200,12 @@ function displayTaskList(obj) {
     document.createTextNode("Current Status : ");
   task__card__select__label.appendChild(task__card__select__label_text);
 
+  let task__card__select__choices = document.createElement("select")
+  task__card__content__select.appendChild(task__card__select__choices)
+  task__card__select__choices.classList.add("task__card__select__choices")
+
   let checkboxTodo = document.createElement("option");
-  task__card__select__label.appendChild(checkboxTodo);
+  task__card__select__choices.appendChild(checkboxTodo);
   checkboxTodo.classList.add("checkbox");
   checkboxTodo.id = "select__todo";
   // set value "todo"
@@ -209,7 +213,7 @@ function displayTaskList(obj) {
   checkboxTodo.appendChild(checkboxTodo_text);
 
   let checkboxProgress = document.createElement("option");
-  task__card__select__label.appendChild(checkboxProgress);
+  task__card__select__choices.appendChild(checkboxProgress);
   checkboxProgress.classList.add("checkbox");
   checkboxProgress.id = "select__progress";
   // set value "progress"
@@ -217,7 +221,7 @@ function displayTaskList(obj) {
   checkboxProgress.appendChild(checkboxProgress_text);
 
   let checkboxDone = document.createElement("option");
-  task__card__select__label.appendChild(checkboxDone);
+  task__card__select__choices.appendChild(checkboxDone);
   checkboxDone.classList.add("checkbox");
   checkboxDone.id = "select__done";
   // set value "Done"

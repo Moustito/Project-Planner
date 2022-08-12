@@ -21,6 +21,7 @@ const clickOnCards = (e) =>{
 
         allOpenedCards.forEach(openCard => {
             openCard.classList.toggle('task__card__opened');
+            console.log('click');
             
         });
 
