@@ -101,7 +101,9 @@
 .newTask .newTask_main #urgent {
   margin-top: 10px;
   grid-area: urgentInput;
-  appearance: checkbox;
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
 }
 .newTask .newTask_main h5 {
   color: #2c3138;
@@ -209,7 +211,8 @@ header .currentDay {
   width: 6.5rem;
   height: 6.5rem;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transform: rotate(45deg);
 }
 .profile__identity {
@@ -302,6 +305,8 @@ header .currentDay {
 }
 .nav__tasks .tasks__filter .filter {
   height: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   text-align: center;
   margin-top: 0.3rem;
@@ -570,6 +575,4 @@ h2 {
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 1px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
