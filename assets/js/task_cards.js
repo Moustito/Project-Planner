@@ -1,8 +1,34 @@
 
-let allClosedCards= document.querySelectorAll('.task__card__closed');
-let allCards= document.querySelectorAll('.task__card')
-let allOpenedCards= document.querySelectorAll('.task__card__opened');
+// // let allClosedCards= document.querySelectorAll('.task__card__closed');
+// // let allCards= document.querySelectorAll('.task__card')
+// // let allOpenedCards= document.querySelectorAll('.task__card__opened');
 
+
+// setInterval(() => {
+// let allClosedCards= document.querySelectorAll('.task__card__closed');
+// let allCards= document.querySelectorAll('.task__card')
+// let allOpenedCards= document.querySelectorAll('.task__card__opened');
+//     console.log(allClosedCards)
+
+//     const clickOnCards = (e) =>{
+//         var card = e.target.classList;
+//         console.log(card)
+//         allClosedCards.forEach(card => {
+    
+//             allOpenedCards.forEach(openCard => {
+//                 openCard.classList.toggle('task__card__opened');
+//                 console.log('click');
+                
+//             });
+    
+//         });
+//     }
+
+//     for (let card of allClosedCards) {
+//         card.addEventListener('click', clickOnCards)
+//     }
+
+//   }, 5000);
 
 // function showCard (){
 //     allClosedCards.forEach(card => {
@@ -14,25 +40,25 @@ let allOpenedCards= document.querySelectorAll('.task__card__opened');
 
 //     });
 // }
-const clickOnCards = (e) =>{
-    var card = e.target.classList;
-    console.log(card)
-    allClosedCards.forEach(card => {
+// const clickOnCards = (e) =>{
+//     var card = e.target.classList;
+//     console.log(card)
+//     allClosedCards.forEach(card => {
 
-        allOpenedCards.forEach(openCard => {
-            openCard.classList.toggle('task__card__opened');
-            console.log('click');
+//         allOpenedCards.forEach(openCard => {
+//             openCard.classList.toggle('task__card__opened');
+//             console.log('click');
             
-        });
+//         });
 
-    });
-}
-// allCards.forEach(card => {
-//     card.addEventListener('click', showCard)
-// });
+//     });
+// }
+// // allCards.forEach(card => {
+// //     card.addEventListener('click', showCard)
+// // });
 
-// clickOnCards();
+// // clickOnCards();
 
-for (let card of allClosedCards) {
-    card.addEventListener('click', clickOnCards)
-}
+// for (let card of allClosedCards) {
+//     card.addEventListener('click', clickOnCards)
+// }

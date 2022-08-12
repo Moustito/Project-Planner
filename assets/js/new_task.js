@@ -59,6 +59,34 @@ function clearInput() {
   document.getElementById("urgent").checked = false;
 }
 
+//FUNCTION TO OPEN THE CARDS
+function openCard(){
+let allClosedCards= document.querySelectorAll('.task__card__closed');
+let allCards= document.querySelectorAll('.task__card')
+let allOpenedCards= document.querySelectorAll('.task__card__opened');
+    console.log(allClosedCards)
+
+    const clickOnCards = (e) =>{
+        var card = e.target.classList;
+        console.log(card)
+        allClosedCards.forEach(card => {
+    
+            allOpenedCards.forEach(openCard => {
+                openCard.classList.toggle('task__card__opened');
+                console.log('click');
+                
+            });
+    
+        });
+    }
+
+    for (let card of allClosedCards) {
+        card.addEventListener('click', clickOnCards)
+    }
+}
+//END FUNCTION OP
+
+
 function displayTaskList(obj) {
   // Card closed
   let task__cards = document.getElementsByClassName("task__cards");
@@ -69,6 +97,7 @@ function displayTaskList(obj) {
   let task__card__closed = document.createElement("section");
   task__card.appendChild(task__card__closed);
   task__card__closed.classList.add("task__card__closed", "card__todo__closed");
+
 
   let task__card__icon = document.createElement("div");
   task__card__closed.appendChild(task__card__icon);
@@ -227,4 +256,11 @@ function displayTaskList(obj) {
   // set value "Done"
   let checkboxDone_text = document.createTextNode("To Do");
   checkboxDone.appendChild(checkboxDone_text);
+
+  let allIcons= document.querySelectorAll('.task__card__icon');
+for (const icon of allIcons) {
+  icon.addEventListener('click', openCard);
 }
+
+}
+
