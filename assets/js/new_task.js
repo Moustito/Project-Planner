@@ -9,8 +9,8 @@ createTask.addEventListener("click", (event) => {
     !(document.getElementById("title").value === "") &&
     !(document.getElementById("date").value === "")
   ) {
-    pushNewTask();
-    displayTaskList();
+    let obj = pushNewTask()
+    displayTaskList(obj);
     newTask.style.display = "none";
     console.log(taskList);
   }
@@ -43,6 +43,7 @@ function pushNewTask() {
   obj["urgent"] = inputUrgent;
 
   taskList.push(obj);
+  return obj
 }
 
 function displayNewTask() {
@@ -57,8 +58,7 @@ function displayTaskList() {
   }
 }
 
-function displayTaskList() {
-  for (element of taskList) {
+function displayTaskList(obj) {
     // Card closed
     let task__cards = document.getElementsByClassName("task__cards");
     let task__card = document.createElement("div");
@@ -90,7 +90,7 @@ function displayTaskList() {
       "task__card__presentation__title"
     );
     task__card__presentation__title.id = "task__title";
-    let task__card__presentation__title_text = document.createTextNode(element.title);
+    let task__card__presentation__title_text = document.createTextNode(obj.title);
     task__card__presentation__title.appendChild(
       task__card__presentation__title_text
     );
@@ -101,7 +101,7 @@ function displayTaskList() {
       "task__card__presentation__daysLeft"
     );
     let task__card__presentation__daysLeft_text =
-      document.createTextNode(element.date);
+      document.createTextNode(taskList.date);
     task__card__presentation__daysLeft.appendChild(
       task__card__presentation__daysLeft_text
     );
@@ -144,7 +144,7 @@ function displayTaskList() {
     let task__card__header__title = document.createElement("h3");
     task__card__header.appendChild(task__card__header__title);
     task__card__header__title.classList.add("task__card__header__title");
-    let task__card__header__title_text = document.createTextNode(element.title);
+    let task__card__header__title_text = document.createTextNode(taskList.title);
     task__card__header__title.appendChild(task__card__header__title_text);
 
     let task__card__content = document.createElement("div");
@@ -157,7 +157,7 @@ function displayTaskList() {
       "task__card__content__description"
     );
     let task__card__content__description_text =
-      document.createTextNode(element.desciption);
+      document.createTextNode(taskList.desciption);
     task__card__content__description.appendChild(
       task__card__content__description_text
     );
@@ -175,7 +175,7 @@ function displayTaskList() {
     let start__task = document.createElement("span");
     task__time.appendChild(start__task);
     start__task.id = "start__task";
-    let start__task_text = document.createTextNode(element.startTime);
+    let start__task_text = document.createTextNode(taskList.startTime);
     start__task.appendChild(start__task_text);
 
     let task__time2 = document.createElement("div");
@@ -187,7 +187,7 @@ function displayTaskList() {
     let end__task = document.createElement("span");
     task__time.appendChild(end__task);
     end__task.id = "end__task";
-    let end__task_text = document.createTextNode(element.endTime);
+    let end__task_text = document.createTextNode(taskList.endTime);
     end__task.appendChild(end__task_text);
 
     let task__card__content__select = document.createElement("div");
@@ -224,5 +224,5 @@ function displayTaskList() {
     // set value "Done"
     let checkboxDone_text = document.createTextNode("To Do");
     checkboxDone.appendChild(checkboxDone_text);
-  }
+  
 }
