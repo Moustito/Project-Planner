@@ -368,7 +368,7 @@ main {
 @media only screen and (min-width: 600px) {
   .task__cards {
     align-self: center;
-    width: 0%;
+    width: 50%;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -464,7 +464,7 @@ main {
 .card__todo__opened .task__card__content__startEnd {
   width: 60%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   text-transform: uppercase;
   font-weight: 600;
@@ -507,7 +507,7 @@ main {
 .card__progress__opened .task__card__content__startEnd {
   width: 60%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   text-transform: uppercase;
   font-weight: 600;
@@ -550,7 +550,7 @@ main {
 .card__done__opened .task__card__content__startEnd {
   width: 60%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   text-transform: uppercase;
   font-weight: 600;

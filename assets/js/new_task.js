@@ -192,11 +192,11 @@ function displayTaskList(obj) {
 
   let task__card__content__startEnd = document.createElement("div");
   task__card__content.appendChild(task__card__content__startEnd);
-  task__card__content.classList.add("task__card__content__startEnd");
+  task__card__content__startEnd.classList.add("task__card__content__startEnd");
 
   let task__time = document.createElement("div");
   task__card__content__startEnd.appendChild(task__time);
-  task__time.classList.add("task__time");
+  task__time.classList.add("start__time");
   let task__time_text = document.createTextNode("Start : ");
   task__time.appendChild(task__time_text);
 
@@ -208,12 +208,12 @@ function displayTaskList(obj) {
 
   let task__time2 = document.createElement("div");
   task__card__content__startEnd.appendChild(task__time2);
-  task__time2.classList.add("task__time");
+  task__time2.classList.add("end__time");
   let task__time2_text = document.createTextNode("End : ");
   task__time2.appendChild(task__time2_text);
 
   let end__task = document.createElement("span");
-  task__time.appendChild(end__task);
+  task__time2.appendChild(end__task);
   end__task.id = "end__task";
   let end__task_text = document.createTextNode(obj.endTime);
   end__task.appendChild(end__task_text);
