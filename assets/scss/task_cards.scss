@@ -12,7 +12,7 @@ main{
 
     @include tabletScreen{
         align-self: center;
-        width: 0%;
+        width: 50%;
     }
     @include desktop{
         align-self: center;
@@ -143,8 +143,7 @@ main{
 }
 
 .task__card__opened{
-    // display: none;
-   
+    display: none;
 }
 
 //CARD TODO OPENED

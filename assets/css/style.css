@@ -368,7 +368,7 @@ main {
 @media only screen and (min-width: 600px) {
   .task__cards {
     align-self: center;
-    width: 0%;
+    width: 50%;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -425,6 +425,10 @@ main {
 
 .card__done .task__card__icon {
   background-color: #6C87DD;
+}
+
+.task__card__opened {
+  display: none;
 }
 
 .card__todo__opened .task__card__header {
