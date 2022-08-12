@@ -8,13 +8,29 @@
     justify-content: space-between;
     margin: 1.3rem;
     height:7rem;
-
+    @include tabletScreen{
+        align-items: center;
+    }
 
     .tasks, .tasks__filter{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .tasks{
+        @include tabletScreen{
+            width: 60%;
+
+            display: grid;
+            grid-template-columns: 1fr 0fr;
+            text-align: center;
+            position: relative;
+            h2{
+                font-size: 2.5rem;
+            }
+        }
     }
     .tasks__addBtn{
         width: 3rem;
@@ -23,6 +39,10 @@
         background-color: $green_task;
         border: none;
         cursor: pointer;
+        @include tabletScreen{
+            position:absolute;
+            right: 0;
+        }
         
         &:hover{
             background-color: #296c75;
@@ -41,15 +61,15 @@
         letter-spacing: 1px;
         cursor: pointer;
 
-        @media only screen and (max-width: 360px) {
-            font-size:1.1rem;
+        @media only screen and (max-width: 365px) {
+            font-size:1rem;
         }
-        @media only screen and (min-width: 600px) {
+        @include tabletScreen {
             width: 60%;
             align-self: center;
+            font-size: 1.2em;
         }
         .filter{
-            border-radius: 20px;
             height:2rem;
             width:fit-content;
             text-align: center;
@@ -60,8 +80,9 @@
             }
             &__todo{
                 background-color: $red_todo_transparent;
-                width: 5rem;
-                @media only screen and (max-width: 360px) {
+                box-shadow: 1px 1px 1px 1px rgba(159, 157, 157, 0.25);
+                width: 20%;
+                @media only screen and (max-width: 365px) {
                     width:4rem;
                 }
                 &:hover{
@@ -71,9 +92,10 @@
                 }
             }
             &__progress{
-                width: 9rem;
+                width: 35%;
                 background-color: $yellow_progress_transparent;
-                @media only screen and (max-width: 360px) {
+                box-shadow: 1px 1px 1px 1px rgba(159, 157, 157, 0.25);
+                @media only screen and (max-width: 365px) {
                     width:8rem;
                 }
                 &:hover{
@@ -83,9 +105,10 @@
                 }
             }
             &__done{
-                width: 5rem;
+                width: 20%;
                 background-color: $blue_done_transparent;
-                @media only screen and (max-width: 360px) {
+                box-shadow: 1px 1px 1px 1px rgba(159, 157, 157, 0.25);
+                @media only screen and (max-width: 365px) {
                     width:4rem;
                 }
                 &:hover{

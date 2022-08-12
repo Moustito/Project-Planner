@@ -1,31 +1,41 @@
 @import './colors.scss';
-@import '/assets/css/reset.css';
+@import './assets/css/reset.css';
+@import './mixin.scss';
 
 header{
+    height: 30vh;
+
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    // max-width: 100vh;
-    // height: 30vh;
-    border-radius: 40px;
+    background-color:$font-color ;
+    color: $background_color;
 
-    background-color:$header_color ;
-    color: $font_color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @include tabletScreen{
+        flex-direction: row-reverse;
+        padding: 2rem;
+    }
 
     // box-shadow: 2px 2px 2px 2px rgb(117, 103, 78);
 
+    .title{
+        text-align: center;
+        margin-bottom: 1rem;
+        @include tabletScreen{
+            text-align: right;
+            width: 60rem;
+        }
+        
+    }
     .first__title{
         text-transform: uppercase;
         font-size: 1rem;
         letter-spacing: 3px;
         font-weight: 200;
-        width: 80%;
-        text-align: center;
-        margin-top: 0.6rem;
-        @media only screen and (max-width: 420px) {
-            font-size: 1.7rem;
-        }
+        padding-bottom: 1rem;
     }
     .currentDay{
         text-transform: uppercase;
@@ -33,6 +43,9 @@ header{
         letter-spacing: 3px;
         font-weight: 400;
         padding-bottom: 1rem;
+        @include smallScreen {
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -52,7 +65,7 @@ header{
         width: 8rem;
         height: 8rem;
         border-radius: 4rem;
-        border: 0.4rem solid $red_todo;
+        border: 0.4rem solid $red_flash;
         border-top-color: transparent;
         transform: rotate(-45deg);
         position: relative;
@@ -77,9 +90,9 @@ header{
         &__name{
             font-size: 1.4rem;
             font-weight: 700;
+            color:#df4e5a;
         }
         &__function{
-            color: $secondary_font_color;
             font-size: 1.3rem;
             font-weight: lighter;
         }

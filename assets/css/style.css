@@ -1,4 +1,4 @@
-@import '/assets/css/reset.css';
+@import './assets/css/reset.css';
 @import '/assets/css/reset.css';
 @import '/assets/css/reset.css';
 .newTask {
@@ -12,10 +12,15 @@
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
 }
+@media only screen and (min-width: 1200px) {
+  .newTask {
+    text-align: center;
+  }
+}
 .newTask .newTask_header {
-  background-color: #e9b776;
+  background-color: #2c3138;
   padding-left: 15px;
-  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .newTask .newTask_header .buttonBack {
   margin: 40px 0 40px 0;
@@ -24,24 +29,27 @@
   margin: 0px 0 30px 0;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #2c3138;
+  color: #df4e5a;
 }
 .newTask .newTask_header #title {
-  background-color: #e9b776;
+  color: #FEF9ED;
+  background-color: #2c3138;
   border: 0;
-  border-bottom: 1px solid #cda169;
+  border-bottom: 1px solid rgba(212, 108, 117, 0.4823529412);
   width: 90%;
 }
 .newTask .newTask_header #date {
-  background-color: #e9b776;
+  color: #FEF9ED;
+  background-color: #2c3138;
   border: 0;
-  border-bottom: 1px solid #cda169;
+  border-bottom: 1px solid rgba(212, 108, 117, 0.4823529412);
   width: 90%;
 }
 .newTask .newTask_header input:nth-child(6) {
   margin-bottom: 40px;
 }
 .newTask .newTask_main {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-left: 15px;
   padding-right: 15px;
   display: grid;
@@ -63,16 +71,29 @@
   background-color: #FEF9ED;
   border: 0;
   width: 90%;
+  border-bottom: 1px solid #D46C74;
+}
+@media only screen and (min-width: 1200px) {
+  .newTask .newTask_main #startTime {
+    text-align: center;
+  }
 }
 .newTask .newTask_main #endTime {
   grid-area: endTimeInput;
   background-color: #FEF9ED;
   border: 0;
+  border-bottom: 1px solid #D46C74;
+}
+@media only screen and (min-width: 1200px) {
+  .newTask .newTask_main #endTime {
+    text-align: center;
+  }
 }
 .newTask .newTask_main #description {
   grid-area: descritionInput;
   background-color: #FEF9ED;
   border: 0;
+  border-bottom: 1px solid #D46C74;
 }
 .newTask .newTask_main .urgent {
   grid-area: urgentText;
@@ -81,6 +102,9 @@
   margin-top: 10px;
   grid-area: urgentInput;
   appearance: checkbox;
+}
+.newTask .newTask_main h5 {
+  color: #2c3138;
 }
 .newTask .newTask_footer {
   padding: 20px 15px 0 15px;
@@ -100,33 +124,48 @@
 }
 
 .h5 {
-  color: grey;
+  color: #FEF9ED;
   margin-top: 10px;
   margin-bottom: 2px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 0.6rem;
+  margin-top: 1rem;
 }
 
 header {
+  height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
-  background-color: #e9b776;
-  color: #2c3138;
+  background-color: #2c3138;
+  color: #FEF9ED;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (min-width: 600px) {
+  header {
+    flex-direction: row-reverse;
+    padding: 2rem;
+  }
+}
+header .title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  header .title {
+    text-align: right;
+    width: 60rem;
+  }
 }
 header .first__title {
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 3px;
   font-weight: 200;
-  width: 80%;
-  text-align: center;
-  margin-top: 0.6rem;
-}
-@media only screen and (max-width: 420px) {
-  header .first__title {
-    font-size: 1.7rem;
-  }
+  padding-bottom: 1rem;
 }
 header .currentDay {
   text-transform: uppercase;
@@ -134,6 +173,11 @@ header .currentDay {
   letter-spacing: 3px;
   font-weight: 400;
   padding-bottom: 1rem;
+}
+@media only screen and (max-width: 420px) {
+  header .currentDay {
+    font-size: 1.2rem;
+  }
 }
 
 .profile {
@@ -151,7 +195,7 @@ header .currentDay {
   width: 8rem;
   height: 8rem;
   border-radius: 4rem;
-  border: 0.4rem solid #D46C74;
+  border: 0.4rem solid #df4e5a;
   border-top-color: transparent;
   transform: rotate(-45deg);
   position: relative;
@@ -177,9 +221,9 @@ header .currentDay {
 .profile__identity__name {
   font-size: 1.4rem;
   font-weight: 700;
+  color: #df4e5a;
 }
 .profile__identity__function {
-  color: #3f444c;
   font-size: 1.3rem;
   font-weight: lighter;
 }
@@ -191,11 +235,28 @@ header .currentDay {
   margin: 1.3rem;
   height: 7rem;
 }
+@media only screen and (min-width: 600px) {
+  .nav__tasks {
+    align-items: center;
+  }
+}
 .nav__tasks .tasks, .nav__tasks .tasks__filter {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+@media only screen and (min-width: 600px) {
+  .nav__tasks .tasks {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+    text-align: center;
+    position: relative;
+  }
+  .nav__tasks .tasks h2 {
+    font-size: 2.5rem;
+  }
 }
 .nav__tasks .tasks__addBtn {
   width: 3rem;
@@ -204,6 +265,12 @@ header .currentDay {
   background-color: #357982;
   border: none;
   cursor: pointer;
+}
+@media only screen and (min-width: 600px) {
+  .nav__tasks .tasks__addBtn {
+    position: absolute;
+    right: 0;
+  }
 }
 .nav__tasks .tasks__addBtn:hover {
   background-color: #296c75;
@@ -221,19 +288,19 @@ header .currentDay {
   letter-spacing: 1px;
   cursor: pointer;
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 365px) {
   .nav__tasks .tasks__filter {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 @media only screen and (min-width: 600px) {
   .nav__tasks .tasks__filter {
     width: 60%;
     align-self: center;
+    font-size: 1.2em;
   }
 }
 .nav__tasks .tasks__filter .filter {
-  border-radius: 20px;
   height: 2rem;
   width: fit-content;
   text-align: center;
@@ -245,9 +312,10 @@ header .currentDay {
 }
 .nav__tasks .tasks__filter .filter__todo {
   background-color: rgba(212, 108, 117, 0.4823529412);
-  width: 5rem;
+  box-shadow: 1px 1px 1px 1px rgba(159, 157, 157, 0.25);
+  width: 20%;
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 365px) {
   .nav__tasks .tasks__filter .filter__todo {
     width: 4rem;
   }
@@ -258,10 +326,11 @@ header .currentDay {
   font-weight: bolder;
 }
 .nav__tasks .tasks__filter .filter__progress {
-  width: 9rem;
+  width: 35%;
   background-color: rgba(237, 197, 145, 0.5215686275);
+  box-shadow: 1px 1px 1px 1px rgba(159, 157, 157, 0.25);
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 365px) {
   .nav__tasks .tasks__filter .filter__progress {
     width: 8rem;
   }
@@ -272,10 +341,11 @@ header .currentDay {
   font-weight: bolder;
 }
 .nav__tasks .tasks__filter .filter__done {
-  width: 5rem;
+  width: 20%;
   background-color: rgba(108, 134, 221, 0.5254901961);
+  box-shadow: 1px 1px 1px 1px rgba(159, 157, 157, 0.25);
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 365px) {
   .nav__tasks .tasks__filter .filter__done {
     width: 4rem;
   }
@@ -286,8 +356,26 @@ header .currentDay {
   font-weight: bolder;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .task__cards {
   font-size: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  .task__cards {
+    align-self: center;
+    width: 0%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .task__cards {
+    align-self: center;
+    width: 50%;
+  }
 }
 .task__cards h3 {
   font-weight: 700;
