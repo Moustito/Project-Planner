@@ -12,7 +12,7 @@ createTask.addEventListener("click", (event) => {
     let obj = pushNewTask()
     displayTaskList(obj);
     newTask.style.display = "none";
-    console.log(taskList);
+    clearInput()
   }
 });
 
@@ -50,12 +50,13 @@ function displayNewTask() {
   newTask.style.display = "block";
 }
 
-function displayTaskList() {
-  for (element of taskList) {
-    let task__title = document.getElementById("task__title");
-    let task__titleText = document.createTextNode(element.title);
-    task__title.appendChild(task__titleText);
-  }
+function clearInput() {
+  document.getElementById('title').value = "";
+  document.getElementById('date').value = "jj/mm/aaaa";
+  document.getElementById('startTime').value = "--:--";
+  document.getElementById('endTime').value = "--:--";
+  document.getElementById('description').value = "";
+  document.getElementById('urgent').checked = false;
 }
 
 function displayTaskList(obj) {
@@ -101,7 +102,7 @@ function displayTaskList(obj) {
       "task__card__presentation__daysLeft"
     );
     let task__card__presentation__daysLeft_text =
-      document.createTextNode(taskList.date);
+      document.createTextNode(obj.date);
     task__card__presentation__daysLeft.appendChild(
       task__card__presentation__daysLeft_text
     );
@@ -144,7 +145,7 @@ function displayTaskList(obj) {
     let task__card__header__title = document.createElement("h3");
     task__card__header.appendChild(task__card__header__title);
     task__card__header__title.classList.add("task__card__header__title");
-    let task__card__header__title_text = document.createTextNode(taskList.title);
+    let task__card__header__title_text = document.createTextNode(obj.title);
     task__card__header__title.appendChild(task__card__header__title_text);
 
     let task__card__content = document.createElement("div");
@@ -175,7 +176,7 @@ function displayTaskList(obj) {
     let start__task = document.createElement("span");
     task__time.appendChild(start__task);
     start__task.id = "start__task";
-    let start__task_text = document.createTextNode(taskList.startTime);
+    let start__task_text = document.createTextNode(obj.startTime);
     start__task.appendChild(start__task_text);
 
     let task__time2 = document.createElement("div");
@@ -187,7 +188,7 @@ function displayTaskList(obj) {
     let end__task = document.createElement("span");
     task__time.appendChild(end__task);
     end__task.id = "end__task";
-    let end__task_text = document.createTextNode(taskList.endTime);
+    let end__task_text = document.createTextNode(obj.endTime);
     end__task.appendChild(end__task_text);
 
     let task__card__content__select = document.createElement("div");

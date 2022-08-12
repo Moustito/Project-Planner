@@ -1,0 +1,104 @@
+@import '/assets/css/reset.css';
+.nav__tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1.3rem;
+  height: 7rem;
+}
+.nav__tasks .tasks, .nav__tasks .tasks__filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__tasks .tasks__addBtn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  background-color: #357982;
+  border: none;
+  cursor: pointer;
+}
+.nav__tasks .tasks__addBtn:hover {
+  background-color: #296c75;
+}
+.nav__tasks .tasks__addBtn img {
+  width: 1.7rem;
+  height: 1.7rem;
+  align-self: center;
+  justify-self: center;
+  padding: 0.1rem;
+}
+.nav__tasks .tasks__filter {
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .nav__tasks .tasks__filter {
+    width: 60%;
+    align-self: center;
+  }
+}
+.nav__tasks .tasks__filter .filter {
+  border-radius: 20px;
+  height: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-top: 0.3rem;
+  padding-top: 0.3rem;
+}
+.nav__tasks .tasks__filter .filter__all:hover {
+  font-weight: bold;
+}
+.nav__tasks .tasks__filter .filter__todo {
+  background-color: rgba(212, 108, 117, 0.4823529412);
+  width: 5rem;
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter .filter__todo {
+    width: 4rem;
+  }
+}
+.nav__tasks .tasks__filter .filter__todo:hover {
+  color: #FEF9ED;
+  background-color: #D46C74;
+  font-weight: bolder;
+}
+.nav__tasks .tasks__filter .filter__progress {
+  width: 9rem;
+  background-color: rgba(237, 197, 145, 0.5215686275);
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter .filter__progress {
+    width: 8rem;
+  }
+}
+.nav__tasks .tasks__filter .filter__progress:hover {
+  color: #FEF9ED;
+  background-color: #e8b471;
+  font-weight: bolder;
+}
+.nav__tasks .tasks__filter .filter__done {
+  width: 5rem;
+  background-color: rgba(108, 134, 221, 0.5254901961);
+}
+@media only screen and (max-width: 360px) {
+  .nav__tasks .tasks__filter .filter__done {
+    width: 4rem;
+  }
+}
+.nav__tasks .tasks__filter .filter__done:hover {
+  color: #FEF9ED;
+  background-color: #6C87DD;
+  font-weight: bolder;
+}/*# sourceMappingURL=navbar.css.map */
