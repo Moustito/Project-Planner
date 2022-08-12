@@ -42,6 +42,13 @@ function pushNewTask() {
   let inputUrgent = document.getElementById("urgent").checked;
   obj["urgent"] = inputUrgent;
 
+  let id =0;
+  for (let i=0;i<taskList.length ; i++){
+    id++;
+  }
+  obj["id"] = id;
+
+  
   taskList.push(obj);
   return obj;
 }
@@ -154,6 +161,9 @@ function displayTaskList(obj) {
   let task__card__opened = document.createElement("section");
   task__card.appendChild(task__card__opened);
   task__card__opened.classList.add("task__card__opened", "card__todo__opened");
+  for (let i=0;i<taskList.length ; i++){
+    task__card__opened.id = "task" + i;
+  }
 
   let task__card__header = document.createElement("div");
   task__card__opened.appendChild(task__card__header);
@@ -177,7 +187,7 @@ function displayTaskList(obj) {
   let task__card__content = document.createElement("div");
   task__card__opened.appendChild(task__card__content);
   task__card__content.classList.add("task__card__content");
-
+  
   let task__card__content__description = document.createElement("p");
   task__card__content.appendChild(task__card__content__description);
   task__card__content__description.classList.add(
@@ -254,13 +264,40 @@ function displayTaskList(obj) {
   checkboxDone.classList.add("checkbox");
   checkboxDone.id = "select__done";
   // set value "Done"
-  let checkboxDone_text = document.createTextNode("To Do");
+  let checkboxDone_text = document.createTextNode("Done");
   checkboxDone.appendChild(checkboxDone_text);
 
+<<<<<<< HEAD
   let allIcons= document.querySelectorAll('.task__card__icon');
 for (const icon of allIcons) {
   icon.addEventListener('click', openCard);
 }
 
+=======
+
+  //////
+
+let select = document.getElementsByClassName("task__card__select__choices")[obj.id];
+
+select.addEventListener("change", (event) => {
+  if (event.target.value === "To Do") {
+    console.log('To Do');
+    document.getElementById("task"+obj.id).classList.replace("card__done__opened","card__todo__opened")
+    document.getElementById("task"+obj.id).classList.replace("card__progress__opened","card__done__opened")
+
+  } else if (event.target.value === "In Progress") {
+    console.log('In progess');
+    document.getElementById("task"+obj.id).classList.replace("card__todo__opened","card__progress__opened")
+    document.getElementById("task"+obj.id).classList.replace("card__done__opened","card__progress__opened")
+  } else {
+    console.log('Done');
+    document.getElementById("task"+obj.id).classList.replace("card__todo__opened","card__done__opened")
+    document.getElementById("task"+obj.id).classList.replace("card__progress__opened","card__done__opened")
+  }
+ 
+});
+console.log(obj.id);
+/////
+>>>>>>> newTask
 }
 

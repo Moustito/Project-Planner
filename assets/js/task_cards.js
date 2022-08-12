@@ -59,6 +59,13 @@
 
 // // clickOnCards();
 
+
 // for (let card of allClosedCards) {
 //     card.addEventListener('click', clickOnCards)
 // }
+
+for (let card of allClosedCards) {
+    card.addEventListener('click', clickOnCards)
+}
+
+
